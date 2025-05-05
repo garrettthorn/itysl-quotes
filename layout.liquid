@@ -1,0 +1,27 @@
+{% assign now = 'now' | date: '%s' %}
+{% assign random_number = now | modulo: 212 %}
+
+<div class="layout layout--col gap--space-between">
+  <div class="grid grid--cols-1 gap--xlarge" style="max-width: 85%;">
+    <div class="grid grid--cols-2">
+      <div class="item">
+        <div class="content">
+          <img class="image-dither" src="{{ quotes.[random_number].imageUrl }}">
+        </div>
+      </div>
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content">
+          <span class="label label--large">{{ 'now' | date: "%-m/%-d/%Y" }}</span>
+          <span class="label label--small">Season: {{quotes.[random_number].season}} Episode: {{quotes.[random_number].episode}}</span>
+          <span class="label label--large">{{ quotes.[random_number].text }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="https://usetrmnl.com/images/plugins/stock_price--render.svg">
+  <span class="title">ITYSL Daily Quotes</span>
+</div>
